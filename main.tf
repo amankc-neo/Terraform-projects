@@ -16,8 +16,8 @@ resource "docker_image" "nginx" {
   name = "nginx:latest"
 
  ports{
-    external = 22
-    internal = 22
+    internal = 80
+    external = 80
      }
 }
 
