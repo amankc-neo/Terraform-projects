@@ -14,14 +14,14 @@ provider "docker" {
 
 resource "docker_image" "nginx" {
   name = "nginx:latest"
-
- ports{
-    internal = 80
-    external = 80
-     }
 }
 
 resource "docker_container" "mycontainer" {
   image = docker_image.nginx.image_id
   name  = "mycontainer"
+
+  ports{
+    internal = 80
+    external = 80
+    }
 }
