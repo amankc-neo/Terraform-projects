@@ -14,6 +14,11 @@ provider "docker" {
 
 resource "docker_image" "nginx" {
   name = "nginx:latest"
+
+ ports{
+    external = 22
+    internal = 22
+     }
 }
 
 resource "docker_container" "mycontainer" {
